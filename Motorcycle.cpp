@@ -22,6 +22,33 @@ public:
         id(id), brand(brand), model(model), pricePerDay(price), available(true) {}
     //virtual destructor
     virtual ~Motocycle(){}
+
+    //getter
+    string getId(){
+        return id;
+    }
+    string getBrand(){
+        return brand;
+    }
+    string getModel(){
+        return model;
+    }
+    double getPricePerday(){
+        return pricePerDay;
+    }
+    bool getAvailable(){
+        return available;
+    }
+    //setter
+    void setBrand(string brand){
+        this->brand = brand;
+    }
+    void setModel(string model){
+        this->model = model;
+    }
+    void setPricePerDay(double pricePerday){
+        this->pricePerDay = pricePerDay;
+    }
 };
     
 

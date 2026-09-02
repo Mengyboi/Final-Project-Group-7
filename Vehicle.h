@@ -23,7 +23,19 @@ public:
     ~Vehicle();
 
     //getter
+    string getId();
+    string getBrand();
+    string getModel();
+    double getPricePerDay();
+    bool getIsRented();
+
+    //setter
+    void setPricePerDay(double newPricePerDay);
+    void setIsRented(bool RentedStatus);
+
+    // Virtual functions (can be overridden by derived classes)
     
+    virtual void display();
 };
 
 #endif

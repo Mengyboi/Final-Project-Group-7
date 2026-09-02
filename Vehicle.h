@@ -11,6 +11,19 @@ protected:
     string model;
     double pricePerDay;
     bool isRented;
+
+public:
+    //defualt constructor
+    Vehicle();
+
+    //parameterized constructor
+    Vehicle(string newId, string newBrand, string newModel, double priceRate);
+
+    //destructor
+    ~Vehicle();
+
+    //getter
+    
 };
 
 #endif

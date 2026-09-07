@@ -13,6 +13,13 @@ public:
     //parameterized contructor
     Car(string newId, string newBrand, string newModel, double priceRate, int chair);
     
+    //getter
+    int getTotalChair();
+    //setter
+    void setTotalChair(int chair);
+
+    //override function
+    void display();
 
 }
 

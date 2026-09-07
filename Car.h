@@ -21,6 +21,6 @@ public:
     //override function
     void display();
 
-}
+};
 
 #endif

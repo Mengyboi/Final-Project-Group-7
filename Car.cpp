@@ -1,11 +1,13 @@
 #include "Car.h"
 #include <iostream>
 
+using namespace std;
+
 Car::Car() : Vehicle(), totalSeats(0) {}
 
-Car::Car(const std::string& newId,
-         const std::string& newBrand,
-         const std::string& newModel,
+Car::Car(const string& newId,
+         const string& newBrand,
+         const string& newModel,
          double priceRate,
          int seats)
     : Vehicle(newId, newBrand, newModel, priceRate),
@@ -17,5 +19,5 @@ void Car::setTotalSeats(int seats) { totalSeats = seats; }
 
 void Car::display() const {
     Vehicle::display();
-    std::cout << "  -> Seats: " << totalSeats << std::endl;
+    cout << "  -> Seats: " << totalSeats << endl;
 }

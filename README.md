@@ -19,10 +19,6 @@ the duration of a run.
 `display()` is `virtual` on `Vehicle` so fleet iteration polymorphically
 prints the right subclass details.
 
-## Build
-
-No build system. Compile the sources directly with a C++17 compiler:
-
 ```bash
 g++ -std=c++17 -Wall -Wextra -o rental_app \
     Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp

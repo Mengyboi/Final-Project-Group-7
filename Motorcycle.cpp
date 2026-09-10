@@ -1,12 +1,14 @@
 #include "Motorcycle.h"
 #include <iostream>
 
+using namespace std;
+
 Motorcycle::Motorcycle()
     : Vehicle(), engineCC(0) {}
 
-Motorcycle::Motorcycle(const std::string& newId,
-                       const std::string& newBrand,
-                       const std::string& newModel,
+Motorcycle::Motorcycle(const string& newId,
+                       const string& newBrand,
+                       const string& newModel,
                        double priceRate,
                        int cc)
     : Vehicle(newId, newBrand, newModel, priceRate),
@@ -18,5 +20,5 @@ void Motorcycle::setEngineCC(int cc) { engineCC = cc; }
 
 void Motorcycle::display() const {
     Vehicle::display();
-    std::cout << "  -> Engine: " << engineCC << "cc" << std::endl;
+    cout << "  -> Engine: " << engineCC << "cc" << endl;
 }

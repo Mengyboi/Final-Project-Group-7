@@ -1,6 +1,8 @@
 #include "Vehicle.h"
 #include <iostream>
 
+using namespace std;
+
 Vehicle::Vehicle()
     : id("Unknown"),
       brand("Unknown"),
@@ -8,9 +10,9 @@ Vehicle::Vehicle()
       pricePerDay(0.0),
       isRented(false) {}
 
-Vehicle::Vehicle(const std::string& newId,
-                 const std::string& newBrand,
-                 const std::string& newModel,
+Vehicle::Vehicle(const string& newId,
+                 const string& newBrand,
+                 const string& newModel,
                  double priceRate)
     : id(newId),
       brand(newBrand),
@@ -18,9 +20,9 @@ Vehicle::Vehicle(const std::string& newId,
       pricePerDay(priceRate),
       isRented(false) {}
 
-std::string Vehicle::getId()          const { return id; }
-std::string Vehicle::getBrand()       const { return brand; }
-std::string Vehicle::getModel()       const { return model; }
+string Vehicle::getId()          const { return id; }
+string Vehicle::getBrand()       const { return brand; }
+string Vehicle::getModel()       const { return model; }
 double      Vehicle::getPricePerDay() const { return pricePerDay; }
 bool        Vehicle::getIsRented()    const { return isRented; }
 
@@ -28,10 +30,10 @@ void Vehicle::setPricePerDay(double newPricePerDay) { pricePerDay = newPricePerD
 void Vehicle::setIsRented(bool rentedStatus)        { isRented    = rentedStatus; }
 
 void Vehicle::display() const {
-    std::cout << "ID: "       << id
+    cout << "ID: "       << id
               << " | Brand: "  << brand
               << " | Model: "  << model
               << " | $/Day: "  << pricePerDay
               << " | Status: " << (isRented ? "Rented" : "Available")
-              << std::endl;
+              << endl;
 }

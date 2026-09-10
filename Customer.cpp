@@ -2,41 +2,43 @@
 #include <algorithm>
 #include <iostream>
 
+using namespace std;
+
 Customer::Customer()
     : customerId(0), name(""), phone(""), email("") {}
 
 Customer::Customer(int id,
-                   const std::string& name,
-                   const std::string& phone,
-                   const std::string& email)
+                   const string& name,
+                   const string& phone,
+                   const string& email)
     : customerId(id), name(name), phone(phone), email(email) {}
 
 int Customer::getCustomerId() const { return customerId; }
 
-const std::string& Customer::getName()  const { return name; }
-const std::string& Customer::getPhone() const { return phone; }
-const std::string& Customer::getEmail() const { return email; }
+const string& Customer::getName()  const { return name; }
+const string& Customer::getPhone() const { return phone; }
+const string& Customer::getEmail() const { return email; }
 
-const std::vector<int>& Customer::getRentalIds() const { return rentalIds; }
+const vector<int>& Customer::getRentalIds() const { return rentalIds; }
 
-void Customer::setName(const std::string& name)  { this->name  = name; }
-void Customer::setPhone(const std::string& phone) { this->phone = phone; }
-void Customer::setEmail(const std::string& email) { this->email = email; }
+void Customer::setName(const string& name)  { this->name  = name; }
+void Customer::setPhone(const string& phone) { this->phone = phone; }
+void Customer::setEmail(const string& email) { this->email = email; }
 
 void Customer::addRentalId(int rentalId) {
     rentalIds.push_back(rentalId);
 }
 
 void Customer::removeRentalId(int rentalId) {
-    rentalIds.erase(std::remove(rentalIds.begin(), rentalIds.end(), rentalId),
+    rentalIds.erase(remove(rentalIds.begin(), rentalIds.end(), rentalId),
                     rentalIds.end());
 }
 
 void Customer::displayCustomer() const {
-    std::cout << "ID: "      << customerId
+    cout << "ID: "      << customerId
               << " | Name: "  << name
               << " | Phone: " << phone
               << " | Email: " << email
               << " | Rentals: " << rentalIds.size()
-              << std::endl;
+              << endl;
 }

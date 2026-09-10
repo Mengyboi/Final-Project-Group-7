@@ -1,20 +1,21 @@
 #include "Car.h"
 #include <iostream>
-using namespace std;
 
-Car::Car() : Vehicle(){
-    totalSeat = 0;
-}
+Car::Car() : Vehicle(), totalSeats(0) {}
 
-Car::Car(string newId, string newBrand, string newModel, double priceRate, int Seat) :
-    Vehicle(newId, newBrand, newModel, priceRate), totalSeat(Seat){}
+Car::Car(const std::string& newId,
+         const std::string& newBrand,
+         const std::string& newModel,
+         double priceRate,
+         int seats)
+    : Vehicle(newId, newBrand, newModel, priceRate),
+      totalSeats(seats) {}
 
-int Car::getTotalSeat(){
-    return totalSeat;
-}
-void Car::setTotalSeat(int Seat){
-    this->totalSeat = Seat;
-}
-void Car::display(){
-    cout << " | Chair: " << totalSeat << endl;
+int Car::getTotalSeats() const { return totalSeats; }
+
+void Car::setTotalSeats(int seats) { totalSeats = seats; }
+
+void Car::display() const {
+    Vehicle::display();
+    std::cout << "  -> Seats: " << totalSeats << std::endl;
 }

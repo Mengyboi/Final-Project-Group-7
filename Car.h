@@ -3,24 +3,22 @@
 
 #include "Vehicle.h"
 
-
-class Car : public Vehicle{
+class Car : public Vehicle {
 private:
-    int totalSeat;
+    int totalSeats;
+
 public:
-    //defualt constructor
     Car();
-    //parameterized contructor
-    Car(string newId, string newBrand, string newModel, double priceRate, int seat);
-    
-    //getter
-    int getTotalSeat();
-    //setter
-    void setTotalSeat(int Seat);
+    Car(const std::string& newId,
+        const std::string& newBrand,
+        const std::string& newModel,
+        double priceRate,
+        int seats);
 
-    //override function
-    void display();
+    int  getTotalSeats() const;
+    void setTotalSeats(int seats);
 
+    void display() const override;
 };
 
-#endif
+#endif // CAR_H

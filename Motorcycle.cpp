@@ -1,28 +1,22 @@
 #include "Motorcycle.h"
 #include <iostream>
-using namespace std;
 
+Motorcycle::Motorcycle()
+    : Vehicle(), engineCC(0) {}
 
-//defualt constructor
-Motorcycle::Motorcycle(): Vehicle() {
-    engincc = 0;
-}
-//parameterized constructor
-Motorcycle::Motorcycle(string newId, string newBrand, string newModel, double priceRate, int engin) : Vehicle(newId, newBrand, newModel, priceRate){
-    engincc == engin;
-}
-//getter
-int Motorcycle::getEnginCC(){
-    return engincc;
-}
-//setter
-void Motorcycle::setEnginCC(int engin ){
-    engincc = engin;
-}
+Motorcycle::Motorcycle(const std::string& newId,
+                       const std::string& newBrand,
+                       const std::string& newModel,
+                       double priceRate,
+                       int cc)
+    : Vehicle(newId, newBrand, newModel, priceRate),
+      engineCC(cc) {}
 
-//display function derried with display from vehicle class
-void Motorcycle::display(){
+int Motorcycle::getEngineCC() const { return engineCC; }
+
+void Motorcycle::setEngineCC(int cc) { engineCC = cc; }
+
+void Motorcycle::display() const {
     Vehicle::display();
-    cout << " | Engine : " << engincc << "cc" << endl;
-
+    std::cout << "  -> Engine: " << engineCC << "cc" << std::endl;
 }

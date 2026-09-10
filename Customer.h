@@ -4,41 +4,35 @@
 #include <string>
 #include <vector>
 
-using namespace std;
+class Customer {
+private:
+    int                customerId;
+    std::string        name;
+    std::string        phone;
+    std::string        email;
+    std::vector<int>   rentalIds;
 
-class Customer{
-    //private data members encapulation
-    private:
-    int customerId;
-    string name;
-    string phone;
-    string email;
-
-    //store the rental IDs
-    vector<int> rentalIds;
-    
-    public:
-    //default constructor
+public:
     Customer();
+    Customer(int id,
+             const std::string& name,
+             const std::string& phone,
+             const std::string& email);
 
-    //parameterized constructor
-    Customer(int id, string name, string phone, string email);
+    int                getCustomerId() const;
+    const std::string& getName()       const;
+    const std::string& getPhone()      const;
+    const std::string& getEmail()      const;
+    const std::vector<int>& getRentalIds() const;
 
-    //getter
-    int getCustomerId() const;
-    string getName() const;
-    string getPhone() const;
-    string getEmail() const;
+    void setName(const std::string& name);
+    void setPhone(const std::string& phone);
+    void setEmail(const std::string& email);
 
-    //setter
-    void setName(string name);
-    void setPhone(string phone);
-    void setEmail(string email); 
-
-    //rental management
     void addRentalId(int rentalId);
-    void removeRental(int rentalId);
+    void removeRentalId(int rentalId);
 
     void displayCustomer() const;
 };
-#endif
+
+#endif // CUSTOMER_H

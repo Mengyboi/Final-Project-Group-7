@@ -14,22 +14,32 @@ the duration of a run.
 | `Motorcycle` | `Vehicle` subclass with `engineCC`.                  |
 | `Customer`   | Customer record plus a list of rental IDs.           |
 | `Rental`     | One rental agreement (customer, vehicle, days, cost). |
-| `Main.cpp`   | Menu loop and storage (`std::vector` + `std::unique_ptr`). |
+| `Main.cpp`   | Menu loop and storage (`vector` + `unique_ptr`). |
 
 `display()` is `virtual` on `Vehicle` so fleet iteration polymorphically
 prints the right subclass details.
 
+## Compile and run
+
+Clone the github
+
 ```bash
-g++ -std=c++17 -Wall -Wextra -o rental_app \
-    Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp
+git clone https://github.com/Mengyboi/Final-Project-Group-7.git
+cd Final-Project-Group-7
 ```
 
-On Windows with MinGW the same command works from Git Bash or PowerShell.
+On Windows with MinGW, run these commands in PowerShell:
 
-## Run
+```powershell
+g++ -std=c++20 Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp -o Main.exe
+.\Main.exe
+```
+
+On macOS or Linux, use:
 
 ```bash
-./rental_app
+g++ -std=c++20 Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp -o Main
+./Main
 ```
 
 Follow the on-screen menu. Vehicles and customers get auto-incrementing

@@ -34,3 +34,19 @@ int Utils::readPositiveInt(string message){
         cout << "Please enter a number greater than 0." << endl;
     }
 }
+//Read a double value
+double::readDouble(string message){
+    string input;
+    double value;
+
+    while (true){
+        cout << message;
+        getline(cin, input);
+        stringstream ss(input);
+
+        if(ss >> value && ss.eof()){
+            return value;
+        }
+        cout << "Invalid input. Please enter a number." << endl;
+    }
+}

@@ -50,3 +50,15 @@ double::readDouble(string message){
         cout << "Invalid input. Please enter a number." << endl;
     }
 }
+// Read a positive double
+double::readPositiveDouble(string message){
+    double value;
+
+    while (true){
+        value = readDouble(message);
+        if(value > 0){
+            return value;
+        }
+        cout << "Please enter a number greater than 0." << endl;
+    }
+}

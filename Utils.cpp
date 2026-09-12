@@ -62,3 +62,17 @@ double::readPositiveDouble(string message){
         cout << "Please enter a number greater than 0." << endl;
     }
 }
+// Read a string that cannot be empty
+string Utils::readString(string message){
+    string value;
+
+    while (true){
+        cout << message;
+        getline(cin, value);
+
+        if (!value.empty()){
+            return value;
+        }
+        cout << "Input cannot be empty. Please try again." << endl;
+    }
+}

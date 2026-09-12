@@ -1,0 +1,24 @@
+#include "Utils.h"
+#include <iostream>
+#include <sstream>
+
+using namespace std;
+
+//Read an integer from the user
+int Utils::readInt(string message){
+    string input;
+    int value;
+
+    while (true){
+        cout << message;
+        getline(cin, input);
+
+        stringstream ss(input);
+
+        if ((ss >> value && ss.eof())){
+            return value;   
+        }
+        cout << "Invalid input. Please enter a number greater than 0" << endl;
+        
+    }
+}

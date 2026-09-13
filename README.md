@@ -44,12 +44,6 @@ g++ -std=c++20 -Wall -Wextra -pedantic Main.cpp Vehicle.cpp Car.cpp Motorcycle.c
 ./Main
 ```
 
-## Documentation
-
-- [Class diagram](docs/class-diagram.md)
-- [Technical report draft](docs/technical-report.md)
-- [Presentation outline](docs/presentation-outline.md)
-
 Follow the on-screen menu. Vehicles and customers get auto-incrementing
 IDs (`V1`, `V2`, ... and `1`, `2`, ...) so you can refer to them by ID
 when renting or returning.

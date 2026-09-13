@@ -14,9 +14,13 @@ Motorcycle::Motorcycle(const string& newId,
     : Vehicle(newId, newBrand, newModel, priceRate),
       engineCC(cc) {}
 
-int Motorcycle::getEngineCC() const { return engineCC; }
+int Motorcycle::getEngineCC() const {
+    return engineCC;
+}
 
-void Motorcycle::setEngineCC(int cc) { engineCC = cc; }
+void Motorcycle::setEngineCC(int cc) {
+    engineCC = cc;
+}
 
 void Motorcycle::display() const {
     Vehicle::display();

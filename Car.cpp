@@ -3,7 +3,8 @@
 
 using namespace std;
 
-Car::Car() : Vehicle(), totalSeats(0) {}
+Car::Car()
+    : Vehicle(), totalSeats(0) {}
 
 Car::Car(const string& newId,
          const string& newBrand,
@@ -13,9 +14,13 @@ Car::Car(const string& newId,
     : Vehicle(newId, newBrand, newModel, priceRate),
       totalSeats(seats) {}
 
-int Car::getTotalSeats() const { return totalSeats; }
+int Car::getTotalSeats() const {
+    return totalSeats;
+}
 
-void Car::setTotalSeats(int seats) { totalSeats = seats; }
+void Car::setTotalSeats(int seats) {
+    totalSeats = seats;
+}
 
 void Car::display() const {
     Vehicle::display();

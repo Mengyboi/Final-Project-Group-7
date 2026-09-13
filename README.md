@@ -1,9 +1,9 @@
 # Final Project — Group 7: Vehicle Rental System
 
-A small console-based vehicle rental system written in C++17. Add cars
-and motorcycles, register customers, rent and return vehicles, and view
-the fleet, customer list, and rental history. Data lives in memory for
-the duration of a run.
+A small console-based vehicle rental system written in C++. Add cars and
+motorcycles, register customers, rent and return vehicles, and view the
+fleet, customer list, and rental history. Data lives in memory for the
+duration of a run.
 
 ## Class layout
 
@@ -14,10 +14,12 @@ the duration of a run.
 | `Motorcycle` | `Vehicle` subclass with `engineCC`.                  |
 | `Customer`   | Customer record plus a list of rental IDs.           |
 | `Rental`     | One rental agreement (customer, vehicle, days, cost). |
-| `Main.cpp`   | Menu loop and storage (`vector` + `unique_ptr`). |
+| `RentalSystem` | Owns collections, IDs, and rental business rules.   |
+| `Main.cpp`   | Safe console input and menu adapter.                 |
 
 `display()` is `virtual` on `Vehicle` so fleet iteration polymorphically
-prints the right subclass details.
+prints the right subclass details. Domain values are validated and a
+rented vehicle cannot be updated, deleted, or rented twice.
 
 ## Compile and run
 
@@ -31,16 +33,22 @@ cd Final-Project-Group-7
 On Windows with MinGW, run these commands in PowerShell:
 
 ```powershell
-g++ -std=c++20 Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp -o Main.exe
+g++ -std=c++20 -Wall -Wextra -pedantic Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp RentalSystem.cpp -o Main.exe
 .\Main.exe
 ```
 
 On macOS or Linux, use:
 
 ```bash
-g++ -std=c++20 Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp -o Main
+g++ -std=c++20 -Wall -Wextra -pedantic Main.cpp Vehicle.cpp Car.cpp Motorcycle.cpp Customer.cpp Rental.cpp RentalSystem.cpp -o Main
 ./Main
 ```
+
+## Documentation
+
+- [Class diagram](docs/class-diagram.md)
+- [Technical report draft](docs/technical-report.md)
+- [Presentation outline](docs/presentation-outline.md)
 
 Follow the on-screen menu. Vehicles and customers get auto-incrementing
 IDs (`V1`, `V2`, ... and `1`, `2`, ...) so you can refer to them by ID

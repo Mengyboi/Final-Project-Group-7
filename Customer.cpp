@@ -13,17 +13,35 @@ Customer::Customer(int id,
                    const string& email)
     : customerId(id), name(name), phone(phone), email(email) {}
 
-int Customer::getCustomerId() const { return customerId; }
+int Customer::getCustomerId() const {
+    return customerId;
+}
 
-const string& Customer::getName()  const { return name; }
-const string& Customer::getPhone() const { return phone; }
-const string& Customer::getEmail() const { return email; }
+const string& Customer::getName() const {
+    return name;
+}
+
+const string& Customer::getPhone() const {
+    return phone;
+}
+
+const string& Customer::getEmail() const {
+    return email;
+}
 
 const vector<int>& Customer::getRentalIds() const { return rentalIds; }
 
-void Customer::setName(const string& name)  { this->name  = name; }
-void Customer::setPhone(const string& phone) { this->phone = phone; }
-void Customer::setEmail(const string& email) { this->email = email; }
+void Customer::setName(const string& newName) {
+    name = newName;
+}
+
+void Customer::setPhone(const string& newPhone) {
+    phone = newPhone;
+}
+
+void Customer::setEmail(const string& newEmail) {
+    email = newEmail;
+}
 
 void Customer::addRentalId(int rentalId) {
     rentalIds.push_back(rentalId);
@@ -35,10 +53,10 @@ void Customer::removeRentalId(int rentalId) {
 }
 
 void Customer::displayCustomer() const {
-    cout << "ID: "      << customerId
-              << " | Name: "  << name
-              << " | Phone: " << phone
-              << " | Email: " << email
-              << " | Rentals: " << rentalIds.size()
-              << endl;
+    cout << "ID: " << customerId
+         << " | Name: " << name
+         << " | Phone: " << phone
+         << " | Email: " << email
+         << " | Rentals: " << rentalIds.size()
+         << endl;
 }

@@ -20,20 +20,30 @@ Vehicle::Vehicle(const string& newId,
       pricePerDay(priceRate),
       isRented(false) {}
 
-string Vehicle::getId()          const { return id; }
-string Vehicle::getBrand()       const { return brand; }
-string Vehicle::getModel()       const { return model; }
-double      Vehicle::getPricePerDay() const { return pricePerDay; }
-bool        Vehicle::getIsRented()    const { return isRented; }
+const string& Vehicle::getId()          const { return id; }
+const string& Vehicle::getBrand()       const { return brand; }
+const string& Vehicle::getModel()       const { return model; }
+double Vehicle::getPricePerDay() const {
+    return pricePerDay;
+}
 
-void Vehicle::setPricePerDay(double newPricePerDay) { pricePerDay = newPricePerDay; }
-void Vehicle::setIsRented(bool rentedStatus)        { isRented    = rentedStatus; }
+bool Vehicle::getIsRented() const {
+    return isRented;
+}
+
+void Vehicle::setPricePerDay(double newPricePerDay) {
+    pricePerDay = newPricePerDay;
+}
+
+void Vehicle::setIsRented(bool rentedStatus) {
+    isRented = rentedStatus;
+}
 
 void Vehicle::display() const {
-    cout << "ID: "       << id
-              << " | Brand: "  << brand
-              << " | Model: "  << model
-              << " | $/Day: "  << pricePerDay
-              << " | Status: " << (isRented ? "Rented" : "Available")
-              << endl;
+    cout << "ID: " << id
+         << " | Brand: " << brand
+         << " | Model: " << model
+         << " | $/Day: " << pricePerDay
+         << " | Status: " << (isRented ? "Rented" : "Available")
+         << endl;
 }

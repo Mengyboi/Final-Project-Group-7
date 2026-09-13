@@ -5,12 +5,12 @@
 
 class Rental {
 private:
-    int         rentalId;
-    int         customerId;
+    int rentalId;
+    int customerId;
     std::string vehicleId;
-    int         days;
-    double      totalCost;
-    bool        isReturned;
+    int days;
+    double totalCost;
+    bool isReturned;
 
 public:
     Rental();
@@ -20,12 +20,12 @@ public:
            int days,
            double totalCost);
 
-    int                getRentalId()   const;
-    int                getCustomerId() const;
-    const std::string& getVehicleId()  const;
-    int                getDays()       const;
-    double             getTotalCost()  const;
-    bool               getIsReturned() const;
+    int getRentalId() const;
+    int getCustomerId() const;
+    const std::string& getVehicleId() const;
+    int getDays() const;
+    double getTotalCost() const;
+    bool getIsReturned() const;
 
     void setDays(int days);
     void setIsReturned(bool returned);

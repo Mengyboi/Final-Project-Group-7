@@ -4,11 +4,11 @@
 #include <string>
 
 class Vehicle {
-protected:
+private:
     std::string id;
     std::string brand;
     std::string model;
-    double      pricePerDay;
+    double pricePerDay;
     bool        isRented;
 
 public:
@@ -20,11 +20,11 @@ public:
 
     virtual ~Vehicle() = default;
 
-    std::string getId()          const;
-    std::string getBrand()       const;
-    std::string getModel()       const;
-    double      getPricePerDay() const;
-    bool        getIsRented()    const;
+    const std::string& getId() const;
+    const std::string& getBrand() const;
+    const std::string& getModel() const;
+    double getPricePerDay() const;
+    bool getIsRented() const;
 
     void setPricePerDay(double newPricePerDay);
     void setIsRented(bool rentedStatus);

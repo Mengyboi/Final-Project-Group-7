@@ -15,7 +15,7 @@ public:
         double priceRate,
         int seats);
 
-    int  getTotalSeats() const;
+    int getTotalSeats() const;
     void setTotalSeats(int seats);
 
     void display() const override;

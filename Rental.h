@@ -1,48 +1,35 @@
 #ifndef RENTAL_H
 #define RENTAL_H
 
-#include <iostream> 
-using namespace std;
+#include <string>
 
-class Rental{
-    //private data members for encapulation
-    private : 
+
+class Rental {
+private:
     int rentalId;
     int customerId;
-    int vehicleId;
-    int rentalDays;
-    double dailyRate;
+    std::string vehicleId;
+    int days;
     double totalCost;
-    bool active;
-    
-    public:
-    //default constructor
-    Rental();
+    bool isReturned;
 
-    //parameterized constructor 
-    Rental(int rentalId, int customerId, int vehicleId, int rentalDays, double dailyRate);
+public:
+    void displayRental() const;
+    Rental(int rentalId,
+           int customerId,
+           const std::string& vehicleId,
+           int days,
+           double totalCost);
 
-    //getter
     int getRentalId() const;
     int getCustomerId() const;
-    int getVehicleId() const;
-    int getRentalDays() const;
-    double getDailyRate() const;
-    double getTotalCost()const;
-    bool isActive() const;
+    const std::string& getVehicleId() const;
 
-    //setter
-    void setRentalDays(int days);
-    void setDailyRate(double rate);
+    int getDays() const;
+    double getTotalCost() const;
 
-    //calulate rental cost
-    void calculateTotal();
-
-    //complete the rental
-    void returnVehicle();
-
-    //Display rental informatiom
-    void displayRental() const;
-
+    bool getIsReturned() const;
+    void setIsReturned(bool returned);
 };
-#endif
+
+#endif  

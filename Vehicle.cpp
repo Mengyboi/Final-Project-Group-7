@@ -1,61 +1,49 @@
 #include "Vehicle.h"
 #include <iostream>
+
 using namespace std;
 
-//defualt constructor
-Vehicle::Vehicle(){
+Vehicle::Vehicle()
+    : id("Unknown"),
+      brand("Unknown"),
+      model("Unknown"),
+      pricePerDay(0.0),
+      isRented(false) {}
 
-    id = "Unknown";
-    brand = "Unknown";
-    model = "Unknown";
-    pricePerDay = 0.0;
-    isRented = false;
-}
-//parameterized constructor
-Vehicle::Vehicle(string newId, string newBrand, string newModel, double priceRate){
-    id = newId;
-    brand = newBrand;
-    model = newModel;
-    pricePerDay = priceRate;
-    isRented = false;
-}
-//destructor
-Vehicle::~Vehicle(){}
-//getter
-string Vehicle::getId(){
-    return id;
-}
-string Vehicle::getBrand(){
-    return brand;
-}
-string Vehicle::getModel(){
-    return model;
-}
-double Vehicle::getPricePerDay(){
+Vehicle::Vehicle(const string& newId,
+                 const string& newBrand,
+                 const string& newModel,
+                 double priceRate)
+    : id(newId),
+      brand(newBrand),
+      model(newModel),
+      pricePerDay(priceRate),
+      isRented(false) {}
+
+const string& Vehicle::getId()          const { return id; }
+const string& Vehicle::getBrand()       const { return brand; }
+const string& Vehicle::getModel()       const { return model; }
+double Vehicle::getPricePerDay() const {
     return pricePerDay;
 }
-bool Vehicle::getIsRented(){
+
+bool Vehicle::getIsRented() const {
     return isRented;
 }
-//setter
-void Vehicle::setPricePerDay(double newPriceRate){
-    pricePerDay = newPriceRate;
+
+void Vehicle::setPricePerDay(double newPricePerDay) {
+    pricePerDay = newPricePerDay;
 }
-void Vehicle::setIsRented(bool rentedStatus){
+
+void Vehicle::setIsRented(bool rentedStatus) {
     isRented = rentedStatus;
 }
 
-//function
-void Vehicle::display(){
-    cout << "ID : " << id 
-        << " | Brand : " << brand 
-        << " | Model : " << model 
-        << " | Price/Day : $" << pricePerDay ;
-        if(isRented){
-            cout << " | Status : Rented "<< endl;
-        } else{
-            cout << " | Status : Available " << endl;
-        }
+void Vehicle::display() const {
+    cout << "ID: " << id
+         << " | Brand: " << brand
+         << " | Model: " << model
+         << " | $/Day: " << pricePerDay
+         << " | Status: " << (isRented ? "Rented" : "Available")
+         << endl;
 }
-
- 

@@ -2,40 +2,34 @@
 #define VEHICLE_H
 
 #include <string>
-using namespace std;
 
-class Vehicle{
-protected:
-    string id;
-    string brand;
-    string model;
+class Vehicle {
+private:
+    std::string id;
+    std::string brand;
+    std::string model;
     double pricePerDay;
-    bool isRented;
+    bool        isRented;
 
 public:
-    //defualt constructor
     Vehicle();
+    Vehicle(const std::string& newId,
+            const std::string& newBrand,
+            const std::string& newModel,
+            double priceRate);
 
-    //parameterized constructor
-    Vehicle(string newId, string newBrand, string newModel, double priceRate);
+    virtual ~Vehicle() = default;
 
-    //destructor
-    ~Vehicle();
+    const std::string& getId() const;
+    const std::string& getBrand() const;
+    const std::string& getModel() const;
+    double getPricePerDay() const;
+    bool getIsRented() const;
 
-    //getter
-    string getId();
-    string getBrand();
-    string getModel();
-    double getPricePerDay();
-    bool getIsRented();
-
-    //setter
     void setPricePerDay(double newPricePerDay);
-    void setIsRented(bool RentedStatus);
+    void setIsRented(bool rentedStatus);
 
-    // Virtual functions (can be overridden by derived classes)
-    
-    virtual void display();
+    virtual void display() const;
 };
 
-#endif
+#endif // VEHICLE_H
